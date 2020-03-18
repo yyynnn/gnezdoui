@@ -1,0 +1,55 @@
+---
+name: Input Card
+menu: Компоненты
+route: /InputCard
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { CardInput, Input, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+# Input Money
+
+## Basic
+
+<Playground>
+  <CardInput label="Номер карты:" placeholder="Введите сумму" />
+</Playground>
+
+## Controlled & Clearable
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState('')
+    return (
+      <React.Fragment>
+        <CardInput
+          placeholder="Введите сумму"
+          clear={true}
+          onClear={() => {
+            setValue('')
+          }}
+          value={value}
+          onChange={e => {
+            setValue(e.currentTarget.value)
+          }}
+        />
+        <Text>Input value: {value}</Text>
+      </React.Fragment>
+    )
+  }}
+</Playground>
+
+## Disabled
+
+<Playground>
+  <CardInput disabled value={'4444444444444444'} />
+</Playground>
+
+## Props
+
+<Props of={CardInput} />
+
+### + Props of Input
+
+<Props of={Input} />

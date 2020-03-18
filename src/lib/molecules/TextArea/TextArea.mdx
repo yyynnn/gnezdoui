@@ -1,0 +1,64 @@
+---
+name: Input TextArea
+menu: Компоненты
+route: /InputTextArea
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { TextArea, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+# TextArea
+
+## Fixed
+
+<Playground>
+  <TextArea />
+</Playground>
+
+## Autoresize
+
+<Playground>
+  <TextArea autoResize />
+</Playground>
+
+## Controlled & Clearable
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState('')
+    return (
+      <React.Fragment>
+        <TextArea
+          label="Фамилия, имя и отчество"
+          placeholder={'Зубенко Михаил Петрович'}
+          clear={true}
+          onClear={() => {
+            setValue('')
+          }}
+          value={value}
+          onChange={e => {
+            setValue(e.currentTarget.value)
+          }}
+        />
+        <Text>Input value: {value}</Text>
+      </React.Fragment>
+    )
+  }}
+</Playground>
+
+## Disabled
+
+<Playground>
+  <TextArea disabled value={"Would make a disabled joke, but i can't STAND them "} />
+</Playground>
+
+## ReadOnly
+
+<Playground>
+  <TextArea readOnly value={"Would make a disabled joke, but i can't STAND them "} />
+</Playground>
+
+## Props
+
+<Props of={TextArea} />

@@ -1,0 +1,39 @@
+---
+name: Context Menu
+menu: Компоненты
+route: /ContextMenu
+---
+
+import { Playground, Props } from 'docz'
+import { ContextMenu, Link, Heading } from 'lib'
+
+# Context Menu
+
+## Primary
+
+<Playground>
+  {() => {
+    const hoveredElement = (
+      <Link dropdown={true} type="arrow_down">
+        <Heading>Gimme silly tippy</Heading>
+      </Link>
+    )
+    const data = [
+      {
+        id: 100,
+        text: 'Сервисы',
+        link: 'https://www.gnezno.ru/loans/cash-loan/'
+      },
+      {
+        id: 101,
+        text: 'Платежи и переводы',
+        link: 'https://www.gnezno.ru/loans/cash-loan/'
+      }
+    ]
+    return <ContextMenu data={data} children={hoveredElement} />
+  }}
+</Playground>
+
+## Props
+
+<Props of={ContextMenu} />

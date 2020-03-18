@@ -1,0 +1,54 @@
+---
+name: Tabs
+menu: Компоненты
+route: /Tabs
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { Tabs, TabsBar, Tab, TabPanel, TabPanels, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+# Tabs
+
+<Playground>
+{
+    () => {
+      const [tab, setTab] = useState('dogs')
+      const handleChange = (event, tab) => {
+        setTab(tab)
+      }
+
+      return (
+        <Tabs tab={tab}>
+          <TabsBar onChange={handleChange}>
+            <Tab tab="dogs" label="Собаки" />
+            <Tab tab="cats" label="Коты" />
+            <Tab tab="fish" label="Рыбы" />
+            <Tab tab="pigs" label="Свиньи" />
+          </TabsBar>
+          <Spacer />
+          <TabPanels>
+            <TabPanel tab="dogs">
+              <Text>Собаки так себе</Text>
+            </TabPanel>
+            <TabPanel tab="cats">
+              <Text>Коты норм</Text>
+            </TabPanel>
+            <TabPanel tab="fish">
+              <Text>Рыба пресная</Text>
+            </TabPanel>
+            <TabPanel tab="pigs">
+              <Text>А свиньи вообще отличная тема</Text>
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
+      )
+    }
+
+}
+
+</Playground>
+
+## Props
+
+<Props of={Tabs} />

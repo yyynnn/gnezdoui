@@ -1,0 +1,1 @@
+export { AttachArea } from './AttachArea'

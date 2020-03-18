@@ -1,0 +1,24 @@
+---
+name: Spacer
+menu: Компоненты
+route: /Spacer
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+
+import { theme, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+# Spacer
+
+## Primary
+
+<Playground>
+  <Text> Между этим</Text>
+  <Spacer space={theme.spacings.xl} spacemob={3 * 50} samespace />
+  <Text>И тем текстом есть расстояние</Text>
+</Playground>
+
+## Props
+
+<Props of={Spacer} />

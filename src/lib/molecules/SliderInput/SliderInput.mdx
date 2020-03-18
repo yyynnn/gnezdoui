@@ -1,0 +1,105 @@
+---
+name: Input Slider&Range
+menu: Компоненты
+route: /InputSlider
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { SliderInput, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+# Input Slider&Range
+
+## Basic
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState(50)
+    return (
+      <SliderInput
+        label={'Сумма кредита'}
+        tooltip={'Привет, мир!'}
+        min={1}
+        max={100}
+        value={value}
+        onChange={setValue}
+      />
+    )
+  }}
+</Playground>
+
+## Range
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState([20, 80])
+    return <SliderInput isRange min={1} max={100} value={value} onChange={setValue} handleDistance={3} />
+  }}
+</Playground>
+
+## Options
+
+### Borders
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState(20)
+    return (
+      <React.Fragment>
+        <SliderInput
+          min={1}
+          max={100}
+          value={value}
+          onChange={setValue}
+          borders
+        />
+        <Spacer space={32} />
+        <SliderInput min={1} max={100} value={value} onChange={setValue} type={'period'} borders />
+      </React.Fragment>
+    )
+
+}}
+
+</Playground>
+
+### Marked
+
+<Playground>
+  {() => {
+    const marks = { '1': 1, '10': 10, '20': 20, '30': 30, '40': 40 }
+    const [value, setValue] = useState(20)
+    return <SliderInput min={1} max={40} value={value} onChange={setValue} marks={marks} />
+  }}
+</Playground>
+
+### Second Value
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState(20)
+    const percent = '20 %'
+    return <SliderInput min={1} max={40} value={value} onChange={setValue} percent={percent} />
+  }}
+</Playground>
+
+## Disabled
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState(50)
+    return <SliderInput min={1} max={100} value={value} disabled={true} />
+  }}
+</Playground>
+
+## ReadOnly
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState(50)
+    return <SliderInput min={1} max={100} value={value} readOnly={true} />
+  }}
+</Playground>
+
+## Props
+
+<Props of={SliderInput} />

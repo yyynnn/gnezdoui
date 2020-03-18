@@ -1,0 +1,48 @@
+---
+name: Toggle
+menu: Компоненты
+route: /Toggle
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { Toggle } from './Toggle'
+
+# Toggle
+
+## Basic Usage
+
+<Playground>
+  {() => {
+    const Component = () => {
+      const [state, setState] = useState(true)
+      return <Toggle rightText={'Text'} hint={'Hint'} checked={state} onChange={() => setState(!state)} />
+    }
+    return <Component />
+  }}
+</Playground>
+
+## Disabled
+
+<Playground>
+  <Toggle disabled />
+  <Toggle checked disabled />
+</Playground>
+
+## Bidirectional
+
+<Playground>
+  {() => {
+    const Component = () => {
+      const [state, setState] = useState(true)
+      return (
+        <Toggle biDir={true} rightText={'also on'} leftText={'on'} checked={state} onChange={() => setState(!state)} />
+      )
+    }
+    return <Component />
+  }}
+</Playground>
+
+## Props
+
+<Props of={Toggle} />

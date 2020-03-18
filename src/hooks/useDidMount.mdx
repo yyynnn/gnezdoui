@@ -1,0 +1,37 @@
+---
+name: useDidMount
+menu: Custom React Hooks
+route: /useDidMount
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { Text } from 'lib'
+
+import { useDidMount } from 'hooks'
+
+# useDidMount
+
+<Playground>
+    {
+        () => {
+        const [state, setState] = useState('')
+        const Component = () => {
+
+            useDidMount(() => {
+                setState('Mounted')
+            })
+
+            return (
+            <div>
+                <Text bold>
+                {state}
+                </Text>
+            </div>
+            )
+        }
+        return <Component />
+        }
+    }
+
+</Playground>

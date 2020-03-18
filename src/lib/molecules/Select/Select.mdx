@@ -1,0 +1,28 @@
+---
+name: Select
+menu: Компоненты
+route: /Select
+---
+
+import { Playground, Props } from 'docz'
+
+import { Select } from './Select'
+import { data_input_items } from 'playground/inputs/Inputs'
+
+# Select
+
+### Can be controlled
+
+<Playground>
+  <Select
+    items={data_input_items}
+    id="some_hashed_id"
+    label="Фамилия, имя и отчество"
+    info="Вспомогательный простой текст в одну строчку"
+    tooltip="Текст тултипа"
+    placeholder=""
+    selected={{value:'', label: 'Выберите значение'}}
+  />
+</Playground>
+
+<Props of={Select} />

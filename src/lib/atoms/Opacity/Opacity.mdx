@@ -1,0 +1,23 @@
+---
+name: Opacity
+menu: Компоненты
+route: /Opacity
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { Opacity, Spacer, Text, Heading, Col, Container, Row, theme } from 'lib'
+
+# Opacity
+
+## Primary
+
+<Playground>
+  <Opacity opacity={theme.opacities.op50}>
+    <Text>Прозрачен</Text>
+  </Opacity>
+</Playground>
+
+## Props
+
+<Props of={Opacity} />

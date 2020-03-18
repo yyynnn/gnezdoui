@@ -1,0 +1,40 @@
+---
+name: Confirmation Field
+menu: Компоненты
+route: /ConfirmationField
+---
+
+import { Playground, Props } from 'docz'
+import { ConfirmationField } from 'lib'
+
+# Confirmation Field
+
+## Primary
+
+<Playground>
+  <ConfirmationField
+    topText="Код из СМС"
+    timer={true}
+    fields={6}
+    autoFocus={true}
+    type="number"
+    fieldWidth={32}
+    fieldHeight={38}
+    timerDuration={30}
+    onComplete={(res, showErr) => {
+      console.log(res)
+      showErr('tERRORists win')
+    }}
+    onChange={res => console.log(res)}
+    onChangePhoneClick={() => {
+      console.log('show me the rainbow')
+    }}
+    onSendCodeClick={() => {
+      console.log('bomb has been planted')
+    }}
+  />
+</Playground>
+
+## Props
+
+<Props of={ConfirmationField} />

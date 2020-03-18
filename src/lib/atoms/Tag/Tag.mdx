@@ -1,0 +1,51 @@
+---
+name: Tag
+menu: Компоненты
+route: /Tag
+---
+
+import { Playground, Props } from 'docz'
+import { Tag, Flex, Spacer } from 'lib'
+
+# Tag
+
+## Basic Usage
+
+<Playground>
+  <Flex>
+    <Tag size={'lg'}> Hello!</Tag>
+    <Tag size={'lg'} palette={'gray'}>
+      Hello!
+    </Tag>
+  </Flex>
+  <Spacer space={16} />
+  <Flex>
+    <Tag size={'md'}> Hello!</Tag>
+    <Tag size={'md'} palette={'gray'}>
+      Hello!
+    </Tag>
+  </Flex>
+  <Spacer space={16} />
+  <Flex>
+    <Tag size={'sm'}> Hello!</Tag>
+    <Tag size={'sm'} palette={'gray'}>
+      Hello!
+    </Tag>
+  </Flex>
+</Playground>
+
+## Hover
+
+<Playground>
+  <Tag hover> Hello!</Tag>
+</Playground>
+
+## Removable
+
+<Playground>
+  <Tag hover onRemove={() => alert('Removed!')}>
+    Hello!
+  </Tag>
+</Playground>
+
+<Props of={Tag} />

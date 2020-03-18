@@ -1,0 +1,36 @@
+---
+name: Skeleton
+menu: Компоненты
+route: /Skeleton
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { Spacer, Col, Container, Row, Flex, SkeletonCir, SkeletonRect, SkeletonBody, theme } from 'lib'
+
+# Skeleton
+
+<Playground>
+  <SkeletonBody wrap="wrap">
+    <Flex fillWidth alignItems="center">
+      <SkeletonCir height={theme.spacings.m} />
+      <Spacer space={theme.spacings.xs2} />
+      <SkeletonRect height={theme.spacings.xs2} />
+    </Flex>
+    <Spacer />
+    <Flex fillWidth alignItems="center">
+      <SkeletonCir height={theme.spacings.m} />
+      <Spacer space={theme.spacings.xs2} />
+      <SkeletonRect height={theme.spacings.xs2} />
+    </Flex>
+    <Spacer />
+    <SkeletonRect height={theme.spacings.s} />
+    <Spacer space={theme.spacings.xs2} />
+    <SkeletonRect height={theme.spacings.xs3} />
+    <Spacer space={theme.spacings.xs2} />
+    <SkeletonRect height={theme.spacings.xs3} />
+    <Spacer space={theme.spacings.xs2} />
+    <SkeletonRect height={theme.spacings.xs3} />
+    <Spacer space={theme.spacings.xs2} />
+  </SkeletonBody>
+</Playground>

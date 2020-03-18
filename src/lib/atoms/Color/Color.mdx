@@ -1,0 +1,19 @@
+---
+name: Color
+menu: Компоненты
+route: /Color
+---
+
+import { Playground, Props } from 'docz'
+
+import { Text, Color, theme } from 'lib'
+
+# Color
+
+<Playground>
+  <Color color={theme.colors.red.primary}>
+    <Text>Этот текст будет красным</Text>
+  </Color>
+</Playground>
+
+<Props of={Color} />

@@ -1,0 +1,92 @@
+---
+name: Calendar
+menu: Компоненты
+route: /Calendar
+---
+
+import { Playground, Props } from 'docz'
+import { Flex, Spacer } from 'lib'
+import { Calendar } from './Calendar'
+import { Year } from './atoms/Year'
+
+# Calendar
+
+## Single
+
+<Playground>
+  <Flex>
+    <Calendar />
+    <Calendar
+      date={new Date(2012, 3, 12)}
+      onPick={date => {
+        console.log(date)
+      }}
+    />
+  </Flex>
+</Playground>
+
+## Range
+
+<Playground>
+  <Flex>
+    <Calendar range />
+    <Calendar
+      range
+      dateStart={new Date(2012, 3, 12)}
+      dateEnd={new Date(2012, 3, 15)}
+      onPick={date => {
+        console.log(date[0], date[1])
+      }}
+    />
+  </Flex>
+</Playground>
+
+## Dual
+
+<Playground>
+  <React.Fragment>
+    <Calendar dual />
+    <Spacer space={8} />
+    <Calendar
+      dual
+      dateStart={new Date(2012, 3, 12)}
+      dateEnd={new Date(2012, 3, 15)}
+      onPick={date => {
+        console.log(date[0], date[1])
+      }}
+    />
+  </React.Fragment>
+</Playground>
+
+## Year
+
+<Playground>
+  <Flex>
+    <Year />
+    <Year
+      value={1930}
+      onPick={year => {
+        console.log(year)
+      }}
+    />
+  </Flex>
+  <Flex>
+    <Year range />
+    <Year
+      range
+      start={1920}
+      end={1931}
+      onPick={range => {
+        console.log(range[0], range[1])
+      }}
+    />
+  </Flex>
+</Playground>
+
+## Calendar Props
+
+<Props of={Calendar} />
+
+## Year Props
+
+<Props of={Year} />

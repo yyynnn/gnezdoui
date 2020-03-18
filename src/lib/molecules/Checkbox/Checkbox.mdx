@@ -1,0 +1,97 @@
+---
+name: Checkbox
+menu: Компоненты
+route: /Checkbox
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { Checkbox, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+# Checkbox
+
+## Primary
+
+<Playground>
+      {() => {
+        const [isChecked1, setChecked1] = useState(false)
+        const [isChecked2, setChecked2] = useState(true)
+        const [isChecked3, setChecked3] = useState(false)
+        const [isChecked4, setChecked4] = useState(true)
+        const [isChecked5, setChecked5] = useState(true)
+
+        const checkboxHandler1 = () => {
+          setChecked1(!isChecked1)
+        }
+        const checkboxHandler2 = () => {
+          setChecked2(!isChecked2)
+        }
+        const checkboxHandler3 = () => {
+          setChecked3(!isChecked3)
+        }
+        const checkboxHandler4 = () => {
+          setChecked4(!isChecked4)
+        }
+        const checkboxHandler5 = () => {
+          setChecked5(!isChecked5)
+        }
+        return (
+          <React.Fragment>
+            <Checkbox
+              size="sm"
+              disabled
+              checkboxHandler={checkboxHandler4}
+              isChecked={isChecked4}
+              hint="Useful hint"
+              name="My beloved checkbox"
+            >
+              Disabled
+            </Checkbox>
+            <Spacer />
+            <Checkbox size="sm" checkboxHandler={checkboxHandler2} isChecked={isChecked2} name="My beloved checkbox">
+              Hello world
+            </Checkbox>
+            <Spacer />
+            <Checkbox size="sm" checkboxHandler={checkboxHandler2} isChecked={isChecked2} name="My beloved checkbox">
+              Hello world
+            </Checkbox>
+            <Spacer />
+            <Checkbox
+              size="sm"
+              checkboxHandler={checkboxHandler1}
+              isChecked={isChecked1}
+              hint="Useful hint"
+              name="My beloved checkbox"
+            >
+              Hello <a href="https://gnezno.ru">link inside</a> world
+            </Checkbox>
+            <Spacer />
+            <Checkbox
+              size="md"
+              error={true}
+              checkboxHandler={checkboxHandler3}
+              isChecked={isChecked3}
+              name="My beloved checkbox"
+              errorMessage="Error description"
+            >
+              Required
+            </Checkbox>
+            <Spacer />
+            <Checkbox
+              size="md"
+              checkboxHandler={checkboxHandler5}
+              isChecked={isChecked5}
+              name="My beloved checkbox"
+              indeterminate
+            >
+              Indeterminate
+            </Checkbox>
+          </React.Fragment>
+        )
+      }}
+
+</Playground>
+
+## Props
+
+<Props of={Checkbox} />

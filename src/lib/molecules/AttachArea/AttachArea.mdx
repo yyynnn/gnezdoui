@@ -1,0 +1,28 @@
+---
+name: AttachArea
+menu: Компоненты
+route: /AttachArea
+---
+
+import { Playground, Props } from 'docz'
+import { AttachArea } from 'lib'
+import { theme } from 'theme'
+
+import { AttachItem } from '../AttachArea/AttachItem.js'
+
+# AttachArea
+
+## Primary
+
+<Playground>
+      {() => {
+        return (
+            <AttachArea enabled={true} maxFileSize={25000000} descriptionTip={true} imagesOnly={true} multiple={true} />
+        )
+      }}
+
+</Playground>
+
+## Props
+
+<Props of={AttachArea} />

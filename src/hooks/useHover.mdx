@@ -1,0 +1,21 @@
+---
+name: useHover
+menu: Custom React Hooks
+route: /useHover
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { useHover } from './useHover'
+
+# useHover
+
+<Playground>
+  {() => {
+    const Component = () => {
+      const [isHovering, bind] = useHover()
+      return <div {...bind}>You are {isHovering ? 'Hovering 🦄' : '🙈 NOT hovering'} this div</div>
+    }
+    return <Component />
+  }}
+</Playground>

@@ -1,0 +1,5 @@
+export { Tabs } from './molecules/Tabs'
+export { Tab } from './organisms/Tab'
+export { TabPanel } from './atoms/TabPanel'
+export { TabPanels } from './atoms/TabPanels'
+export { TabsBar } from './molecules/TabsBar'

@@ -1,0 +1,26 @@
+---
+name: Accordion
+menu: Компоненты
+route: /Accordion
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { Accordion, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+import { accordion_test_data } from 'playground/accordion/accordion_test_data'
+
+# Accordion
+
+## Primary
+
+<Playground>
+  <Accordion items={accordion_test_data} />
+  <Spacer />
+  <Accordion items={accordion_test_data} size="md" />
+  <Spacer />
+</Playground>
+
+## Props
+
+<Props of={Accordion} />

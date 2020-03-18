@@ -1,0 +1,57 @@
+---
+name: Badge
+menu: Компоненты
+route: /Badge
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { Spacer, Badge, Text, Heading, Col, Container, Row, Money, List, ListItem } from 'lib'
+
+# Badge
+
+## Primary
+
+<Playground>
+  <Badge value={10} size="md" type="primary" />
+  <Badge value={100} size="lg" type="primary" />
+  <Spacer />
+  <Badge text="Some badge" size="md" type="primary" />
+  <Badge text="Some badge" size="lg" type="primary" />
+</Playground>
+
+## Secondary
+
+<Playground>
+  <Badge value={10} size="md" type="secondary" />
+  <Badge value={100} size="lg" type="secondary" />
+  <Spacer />
+  <Badge text="Some badge" size="md" type="secondary" />
+  <Badge text="Some badge" size="lg" type="secondary" />
+</Playground>
+
+## Outline
+
+<Playground>
+  <Badge value={10} size="md" outline />
+  <Badge value={100} size="lg" outline />
+  <Spacer />
+  <Badge text="Some badge" size="md" outline />
+  <Badge text="Some badge" size="lg" outline />
+</Playground>
+
+## Dynamic
+
+<Playground>
+  <Badge value={10} size="md" dynamic={true} />
+  <Badge value={100} size="lg" dynamic={true} />
+  <Badge value={100} size="lg" dynamic={true} outline />
+  <Spacer />
+  <Badge text="Some badge" size="md" dynamic={true} />
+  <Badge text="Some badge" size="lg" dynamic={true} />
+  <Badge text="Some badge" size="lg" dynamic={true} outline />
+</Playground>
+
+## Props
+
+<Props of={Badge} />

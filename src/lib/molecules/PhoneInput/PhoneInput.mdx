@@ -1,0 +1,66 @@
+---
+name: Input Phone
+menu: Компоненты
+route: /InputPhone
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { PhoneInput, Input, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+# Input Phone
+
+## Basic
+
+<Playground>
+  <PhoneInput />
+</Playground>
+
+## Custom prefix and mask
+
+<Playground>
+  <PhoneInput
+    placeholder="Номер телефона"
+    prefix="8 800"
+    value="5001212"
+    mask={[/\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
+  />
+</Playground>
+
+## Controlled & Clearable
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState('+7 ')
+    return (
+      <React.Fragment>
+        <PhoneInput
+          label="Номер телефона: "
+          clear={true}
+          onClear={() => {
+            setValue('+7')
+          }}
+          value={value}
+          onChange={e => {
+            setValue(e.currentTarget.value)
+          }}
+        />
+        <Text>Input value: {value}</Text>
+      </React.Fragment>
+    )
+  }}
+</Playground>
+
+## Disabled
+
+<Playground>
+  <PhoneInput disabled value={'+79672641838'} />
+</Playground>
+
+## Props
+
+<Props of={PhoneInput} />
+
+### + Props of Input
+
+<Props of={Input} />

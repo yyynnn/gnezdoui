@@ -1,0 +1,42 @@
+dist: trusty
+sudo: required
+language: node_js
+node_js:
+  - '10'
+
+jobs:
+  include:
+    - stage: Lint
+      name: 'Lint code with eslint'
+      script: npm run lint
+      skip_cleanup: true
+      if: branch = release OR type IN (pull_request)
+    - stage: Test
+      name: 'Unit Tests'
+      script: npm run test:unit
+      skip_cleanup: true
+      if: branch = release OR type IN (pull_request)
+    - stage: Test Build
+      name: 'Test build process'
+      script: npm run build:prepare && npm run test:bundle
+      skip_cleanup: true
+      if: branch = release AND type IN (pull_request)
+    - stage: Semantic release
+      name: 'Semantic release: github release + npm publish'
+      node_js: '10'
+      deploy:
+        provider: script
+        skip_cleanup: true
+        github_token: $GH_TOKEN
+        script:
+          - npx semantic-release
+        on:
+          branch: release
+      if: type IN (push)
+      on:
+        branch: release
+    - stage: Push to master
+      name: Push code from release to master
+      skip_cleanup: true
+      script: sh ./travis-push.sh
+      if: branch = release AND type IN (push)

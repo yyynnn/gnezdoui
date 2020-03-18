@@ -1,0 +1,24 @@
+---
+name: Money
+menu: Компоненты
+route: /Money
+---
+
+import { Playground, Props } from 'docz'
+
+import { Spacer, Text, Heading, Col, Container, Row, Money } from 'lib'
+
+# Money
+
+<Playground>
+  <Money value="12345" />
+  <Money value="1245.00" />
+  <Money value="12345.67" currency="EUR" />
+  <Money value="12345.999" currency="EUR" />
+  <Money value="12345" heading />
+  <Money value="1245.00" heading />
+  <Money value="12345.67" heading currency="EUR" />
+  <Money value="12345.999" heading currency="EUR" />
+</Playground>
+
+<Props of={Money} />

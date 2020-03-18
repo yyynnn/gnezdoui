@@ -1,0 +1,52 @@
+---
+name: Input Number
+menu: Компоненты
+route: /InputNumber
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { NumberInput, Input, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+# Input Money
+
+## Basic
+
+<Playground>
+  <NumberInput label="Количетсво счетов:" min={0} max={10} />
+</Playground>
+
+## Controlled & Clearable
+
+#### !!!OnChange returns value, not event
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState(0)
+    return (
+      <React.Fragment>
+        <NumberInput
+          value={value}
+          onChange={value => {
+            setValue(value)
+          }}
+        />
+        <Text>Input value: {value}</Text>
+      </React.Fragment>
+    )
+  }}
+</Playground>
+
+## Disabled
+
+<Playground>
+  <NumberInput disabled value={'10000'} />
+</Playground>
+
+## Props
+
+<Props of={NumberInput} />
+
+### + Props of Input
+
+<Props of={Input} />

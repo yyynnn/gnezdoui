@@ -1,0 +1,28 @@
+---
+name: InlineEdit
+menu: Компоненты
+route: /InlineEdit
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { InlineEdit } from 'lib'
+
+# InlineEdit
+
+## Primary
+
+<Playground>
+  <InlineEdit
+    defaultText="Кредитная карта Гнездо"
+    autoFocus={false}
+    inputMaxLength={64}
+    onFocus={text => {}}
+    onFocusOut={text => {}}
+    placeholder=""
+  />
+</Playground>
+
+## Props
+
+<Props of={InlineEdit} />

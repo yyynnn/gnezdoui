@@ -1,0 +1,38 @@
+---
+name: useClickOutside
+menu: Custom React Hooks
+route: /useClickOutside
+---
+
+import { useState, useRef } from 'react'
+import { useToggle, useClickOutside } from 'hooks'
+import { Playground, Props } from 'docz'
+import { Button } from 'lib'
+
+# useClickOutside
+
+<Playground>
+  {
+    () => {
+      const ref = useRef()
+      const [on, toggle] = useToggle(false)
+      const Component = () => {
+        const handler = () => {
+          toggle(false)
+        }
+        useClickOutside(ref, handler)
+
+        return (
+          <div ref={ref}>
+            <Button onClick={()=> toggle(true)}>
+              {on ? 'Inside' : 'Outside'}
+            </Button>
+          </div>
+        )
+      }
+      return <Component />
+    }
+
+}
+
+</Playground>

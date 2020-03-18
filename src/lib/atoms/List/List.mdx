@@ -1,0 +1,36 @@
+---
+name: List
+menu: Компоненты
+route: /List
+---
+
+import { Playground, Props } from 'docz'
+
+import { Spacer, Text, Heading, Col, Container, Row, Money, List, ListItem } from 'lib'
+
+import { list_data, test_data } from 'playground/lists/list_data'
+
+# List
+
+## List with data
+
+<Playground>
+  <List data={list_data} size="md" />
+</Playground>
+
+## List with children
+
+<Playground>
+  <List size="md" listType="ol">
+    <ListItem index={1}>Item 1</ListItem>
+    <ListItem index={2}>Item 2</ListItem>
+    <ListItem index={3}>Item 3</ListItem>
+  </List>
+  <List size="md" listType="ul">
+    <ListItem index={1}>Item 1</ListItem>
+    <ListItem index={2}>Item 2</ListItem>
+    <ListItem index={3}>Item 3</ListItem>
+  </List>
+</Playground>
+
+<Props of={List} />

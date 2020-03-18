@@ -1,0 +1,60 @@
+---
+name: Grid
+menu: Компоненты
+route: /Grid
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { Spacer, Text, Heading, Col, Opacity, Container, Row, theme } from 'lib'
+
+import { Colors } from 'playground/colors/Colors'
+import { GridBounds } from 'playground/grid/Grid'
+
+# Grid
+
+## Primary
+
+<Playground>
+  <Row>
+    <Col sm="6" md="4">
+      <Opacity opacity={theme.opacities.op32}>
+        <Colors color={theme.colors.red.primary} fluid>
+          <GridBounds>
+            <Text>{1}</Text>
+          </GridBounds>
+        </Colors>
+      </Opacity>
+    </Col>
+    <Col sm="6" md="4">
+      <Opacity opacity={theme.opacities.op32}>
+        <Colors color={theme.colors.red.primary} fluid>
+          <GridBounds>
+            <Text>{2}</Text>
+          </GridBounds>
+        </Colors>
+      </Opacity>
+    </Col>
+    <Col sm="6" md="4">
+      <Opacity opacity={theme.opacities.op32}>
+        <Colors color={theme.colors.red.primary} fluid>
+          <GridBounds>
+            <Text>{3}</Text>
+          </GridBounds>
+        </Colors>
+      </Opacity>
+    </Col>
+  </Row>
+</Playground>
+
+## Props
+
+<Props of={Container} />
+
+## Row
+
+<Props of={Row} />
+
+## Col
+
+<Props of={Col} />

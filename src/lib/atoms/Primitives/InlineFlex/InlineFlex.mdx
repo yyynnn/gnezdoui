@@ -1,0 +1,23 @@
+---
+name: InlineFlex
+menu: Примитивы
+route: /InlineFlex
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { InlineFlex, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+# InlineFlex
+
+<Playground>
+  <div style={{ height: '400px' }}>
+    <InlineFlex align="center" fillHeight>
+      <Heading h={4}>I'm a heading in a Inlineflex box</Heading>
+    </InlineFlex>
+  </div>
+</Playground>
+
+## Props
+
+<Props of={InlineFlex} />

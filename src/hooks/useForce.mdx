@@ -1,0 +1,25 @@
+---
+name: useForce
+menu: Custom React Hooks
+route: /useForce
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { useForce } from './useForce'
+
+# useForce
+
+<Playground>
+  {() => {
+    const Component = () => {
+      const forceUpdate = useForce()
+      const handleClick = () => {
+        alert('I will re-render now.')
+        forceUpdate()
+      }
+      return <button onClick={handleClick}>PRESS ME</button>
+    }
+    return <Component />
+  }}
+</Playground>

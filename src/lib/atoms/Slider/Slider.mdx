@@ -1,0 +1,96 @@
+---
+name: Slider
+menu: Компоненты
+route: /Slider
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+
+import { theme, Slider, Text, Heading, Col, Container, Row, Spacer } from 'lib'
+
+# Slider
+
+## Basic
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState(10)
+    return <Slider value={value} onChange={setValue} step={1} min={1} max={40} />
+  }}
+</Playground>
+
+## Borders
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState(10)
+    return (
+      <React.Fragment>
+        <Slider value={value} onChange={setValue} step={1} min={1} max={40} borders={true} />
+        <Spacer space={theme.spacings.xl} />
+        <Slider
+          value={value}
+          onChange={setValue}
+          step={1}
+          min={1}
+          max={40}
+          borders={true}
+          borderType={'period'}
+          period={'years'}
+        />
+      </React.Fragment>
+    )
+  }}
+</Playground>
+
+## Marked
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState(10)
+    const marks = { '1': 1, '10': 10, '20': 20, '30': 30, '40': 40 } // label : value
+    return <Slider value={value} onChange={setValue} step={1} min={1} max={40} marks={marks} />
+  }}
+</Playground>
+
+## ToolTip
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState(10)
+    return <Slider value={value} onChange={setValue} step={1} min={1} max={40} tooltip={true} />
+  }}
+</Playground>
+
+## Range
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState([2, 10])
+    return (
+      <Slider
+        isRange={true}
+        value={value}
+        onChange={setValue}
+        step={1}
+        min={1}
+        max={40}
+        handleDistance={1} // minimal steps between handles
+      />
+    )
+  }}
+</Playground>
+
+## Disabled
+
+<Playground>
+  {() => {
+    const value = [4, 20]
+    return <Slider value={value} step={1} min={1} max={40} isRange disabled={true} />
+  }}
+</Playground>
+
+## Props
+
+<Props of={Slider} />

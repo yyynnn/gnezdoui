@@ -1,0 +1,82 @@
+---
+name: Input
+menu: Компоненты
+route: /Input
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { Input, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+# Input
+
+## Basic
+
+<Playground>
+  <Input placeholder={'Зубенко Михаил Петрович'} />
+</Playground>
+
+## Masked
+
+ <Playground>
+  <Input guide={true} placeholder={'1111'} mask={[/\d/, /\d/, /\d/, /\d/]}/>
+</Playground>
+
+## Controlled & Clearable
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState('')
+    return (
+      <React.Fragment>
+        <Input
+          label="Фамилия, имя и отчество"
+          placeholder={'Зубенко Михаил Петрович'}
+          clear={true}
+          onClear={() => {
+            setValue('')
+          }}
+          value={value}
+          onChange={e => {
+            setValue(e.currentTarget.value)
+          }}
+        />
+        <Text>Input value: {value}</Text>
+      </React.Fragment>
+    )
+  }}
+</Playground>
+
+## Labeled
+
+<Playground>
+  <Input label="Фамилия, имя и отчество" tooltip="Привет, мир!" placeholder="Зубенко Михаил Петрович" />
+</Playground>
+
+## Description only
+
+<Playground>
+  <Input label="Фамилия, имя и отчество" tooltip="Привет, мир!" placeholder="Зубенко Михаил Петрович" />
+</Playground>
+
+## Error
+
+<Playground>
+  <Input error errorMsg={'Вы точно мафиозник ?'} placeholder={'Зубенко Михаил Петрович'} />
+</Playground>
+
+## Disabled
+
+<Playground>
+  <Input disabled placeholder={'Зубенко Михаил Петрович'} />
+</Playground>
+
+## ReadOnly
+
+<Playground>
+  <Input readOnly value={'Зубенко Михаил Петрович'} />
+</Playground>
+
+## Props
+
+<Props of={Input} />

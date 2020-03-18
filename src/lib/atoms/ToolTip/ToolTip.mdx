@@ -1,0 +1,25 @@
+---
+name: ToolTip
+menu: Компоненты
+route: /ToolTip
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { ToolTip, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+# ToolTip
+
+<Playground>
+  <ToolTip hint={`Всплывающие подсказки содержат краткое описание контейнера тултипа — 288 px.`}>
+    <span>Hover above</span>
+  </ToolTip>
+  <Spacer />
+  <ToolTip hint={'Small hint'} placement="right">
+    <span>Маленькая подсказка</span>
+  </ToolTip>
+</Playground>
+
+## Props
+
+<Props of={ToolTip} />

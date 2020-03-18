@@ -1,0 +1,38 @@
+---
+name: MultiSelect
+menu: Компоненты
+route: /MultiSelect
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { MultiSelect, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+import { data_input_items } from 'playground/inputs/Inputs'
+
+# MultiSelect
+
+## Primary
+
+<Playground>
+  {() => {
+    return (
+      <MultiSelect
+        id="OE)V3Evdd_2"
+        label="Фамилия, имя и отчество"
+        info="Вспомогательный простой текст в одну строчку"
+        tooltip="Текст тултипа. Привет, человек!"
+        placeholder=""
+        icon="list"
+        items={data_input_items}
+        onChange={val => {
+          console.log('selected items', val)
+        }}
+      />
+    )
+  }}
+</Playground>
+
+## Props
+
+<Props of={MultiSelect} />

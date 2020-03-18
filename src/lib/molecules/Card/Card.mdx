@@ -1,0 +1,34 @@
+---
+name: Card
+menu: Компоненты
+route: /Card
+---
+
+import { Playground, Props } from 'docz'
+import { Card, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+import { CardWithData } from '../../../../playground/cards/Cards'
+
+# Card
+
+<Playground>
+  {() => {
+    return (
+      <Row fillHeight>
+        <Col md="6">
+          <Card
+            text="Краткий текстовый блок с описанием"
+            heading="Заголовок"
+            button="Подробнее"
+            url="https://gnezno.ru"
+            img="https://cdn-images-1.medium.com/max/1600/1*n1JBTtq_HSWRkT2elKXU-Q.jpeg"
+          />
+        </Col>
+      </Row>
+    )
+  }}
+</Playground>
+
+## Props
+
+<Props of={Card} />

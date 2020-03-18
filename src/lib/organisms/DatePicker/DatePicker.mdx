@@ -1,0 +1,37 @@
+---
+name: DatePicker
+menu: Компоненты
+route: /DatePicker
+---
+
+import { Playground, Props } from 'docz'
+import { Flex, Spacer } from 'lib'
+import { DatePicker } from './DatePicker'
+
+# Date Picker
+
+## Single
+
+<Playground>
+  <Flex>
+    <DatePicker />
+    <Spacer space={16} />
+    <DatePicker date={new Date()} />
+  </Flex>
+  <Spacer space={32} />
+</Playground>
+
+## Range
+
+<Playground>
+  <Flex>
+    <DatePicker range={true} />
+    <Spacer space={16} />
+    <DatePicker range={true} dateStart={new Date(2019, 5, 10)} dateEnd={new Date(2019, 5, 20)} />
+  </Flex>
+  <Spacer space={32} />
+</Playground>
+
+## Props
+
+<Props of={DatePicker} />

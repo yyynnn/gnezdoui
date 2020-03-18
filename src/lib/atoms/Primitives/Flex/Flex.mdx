@@ -1,0 +1,23 @@
+---
+name: Flex
+menu: Примитивы
+route: /Flex
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { Flex, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+# Flex
+
+<Playground>
+  <div style={{ height: '400px' }}>
+    <Flex align="center" fillHeight>
+      <Heading h={4}>I'm a heading in a flex box</Heading>
+    </Flex>
+  </div>
+</Playground>
+
+## Props
+
+<Props of={Flex} />

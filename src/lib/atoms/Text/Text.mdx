@@ -1,0 +1,36 @@
+---
+name: Text
+menu: Компоненты
+route: /Text
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+
+import { Text } from './Text'
+import { Spacer } from '../Spacer'
+
+# Text
+
+## Basic Usage
+
+<Playground>
+  <Text size="lg" sizemob="sm">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, dolorum. Voluptatum quaerat quos quisquam
+    perferendis dolor rerum illum, similique nobis fugiat tenetur officiis maxime minus ipsa earum omnis quasi ipsam.
+  </Text>
+  <Spacer />
+  <Text>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, dolorum. Voluptatum quaerat quos quisquam
+    perferendis dolor rerum illum, similique nobis fugiat tenetur officiis maxime minus ipsa earum omnis quasi ipsam.
+  </Text>
+  <Spacer />
+  <Text size="sm" sizemob="lg">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, dolorum. Voluptatum quaerat quos quisquam
+    perferendis dolor rerum illum, similique nobis fugiat tenetur officiis maxime minus ipsa earum omnis quasi ipsam.
+  </Text>
+</Playground>
+
+## Props
+
+<Props of={Text} />

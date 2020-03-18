@@ -1,0 +1,24 @@
+---
+name: useWindowSize
+menu: Custom React Hooks
+route: /useWindowSize
+---
+
+import { Playground, Props } from 'docz'
+import { useWindowSize } from './useWindowSize'
+
+# useWindowSize
+
+<Playground>
+  {() => {
+    const Component = () => {
+      const { width, height } = useWindowSize()
+      return (
+        <div>
+          Browser page window is <b>{width}px</b> wide and <b>{height}px</b> high! 🦄
+        </div>
+      )
+    }
+    return <Component />
+  }}
+</Playground>

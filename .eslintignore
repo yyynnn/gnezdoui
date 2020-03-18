@@ -1,0 +1,8 @@
+build/*
+dist/*
+client/example/*
+*.example.js
+*example.js
+node_modules/
+client/fonts.css
+*.css

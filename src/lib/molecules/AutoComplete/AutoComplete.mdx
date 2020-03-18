@@ -1,0 +1,38 @@
+---
+name: Input AutoComplete
+menu: Компоненты
+route: /InputAutoComplete
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { AutoComplete, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+import { AutoCompleteInner } from './AutoCompleteInner'
+
+# AutoComplete
+
+## Primary
+
+<Playground>
+  <AutoComplete
+    onChange={() => {
+      console.log('here')
+    }}
+  />
+</Playground>
+
+## Search
+
+<Playground>
+  <AutoComplete
+    search
+    onChange={() => {
+      console.log('here')
+    }}
+  />
+</Playground>
+
+## Props
+
+<Props of={AutoCompleteInner} />

@@ -1,0 +1,30 @@
+---
+name: Avatar
+menu: Компоненты
+route: /Avatar
+---
+
+import { Playground, Props } from 'docz'
+import { Avatar } from 'lib'
+
+# Avatar
+
+## Default
+
+<Playground>
+  <Avatar name="Йобама Кеанос" size="XL" />
+</Playground>
+
+## With Photo
+
+<Playground>
+  <Avatar
+    name="Тарас Обамос"
+    size="3XL"
+    image="https://cdn1.savepice.ru/uploads/2019/7/15/64a86751edd49f6741cac55c09ff95f6-full.png"
+  />
+</Playground>
+
+## Props
+
+<Props of={Avatar} />

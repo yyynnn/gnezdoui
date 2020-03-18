@@ -1,0 +1,92 @@
+---
+name: Radio
+menu: Компоненты
+route: /Radio
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+import { Radio } from './Radio'
+
+# Radio
+
+<Playground>
+
+          {() => {
+              const [isChecked1, setChecked1] = useState(true)
+              const [isChecked2, setChecked2] = useState(false)
+              const [isChecked3, setChecked3] = useState(false)
+              const [isChecked4, setChecked4] = useState(false)
+
+              const radioHandlerGroup = () => {
+                setChecked1(!isChecked1)
+                setChecked2(!isChecked2)
+                setChecked3(!isChecked3)
+                setChecked4(!isChecked4)
+              }
+
+              return (
+                <Row>
+                  <Col md="12">
+                    <Radio size="md" disabled hint="Useful hint" id="radioID-01" name="radio_one" isChecked={false}>
+                      Disabled (No checked)
+                    </Radio>
+                    <Spacer/>
+                    <Radio size="md" disabled hint="Useful hint" id="radioID-02" name="radio_one" isChecked={true}>
+                      Disabled (Checked)
+                    </Radio>
+                    <Spacer/>
+                    <Radio
+                      size="md"
+                      id="radioID-02"
+                      name="radio_grp"
+                      isChecked={isChecked1}
+                      radioHandler={radioHandlerGroup}
+                    >
+                      Hello world
+                    </Radio>
+                    <Spacer/>
+                    <Radio
+                      size="md"
+                      id="radioID-03"
+                      name="radio_grp"
+                      isChecked={isChecked2}
+                      radioHandler={radioHandlerGroup}
+                    >
+                      Hello world
+                    </Radio>
+                    <Spacer/>
+                    <Radio
+                      size="sm"
+                      hint="Useful hint"
+                      id="radioID-04"
+                      name="radio_grp"
+                      isChecked={isChecked3}
+                      radioHandler={radioHandlerGroup}
+                    >
+                      Hello <a href="https://gnezno.ru">link inside</a> world
+                    </Radio>
+                    <Spacer/>
+                    <Radio
+                      size="sm"
+                      error={true}
+                      errorMessage="Error description"
+                      id="radioID-05"
+                      name="radio_grp"
+                      isChecked={isChecked4}
+                      radioHandler={radioHandlerGroup}
+                    >
+                      Required
+                    </Radio>
+                  </Col>
+                </Row>
+              )
+            }}
+
+</Playground>
+
+## Props
+
+<Props of={Radio} />

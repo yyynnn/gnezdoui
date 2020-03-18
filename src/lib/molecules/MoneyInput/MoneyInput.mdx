@@ -1,0 +1,55 @@
+---
+name: Input Money
+menu: Компоненты
+route: /InputMoney
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { MoneyInput, Input, Spacer, Text, Heading, Col, Container, Row } from 'lib'
+
+# Input Money
+
+## Basic
+
+<Playground>
+  <MoneyInput label="Сумма перевода: " currency="RUB" placeholder="Введите сумму" />
+</Playground>
+
+## Controlled & Clearable
+
+<Playground>
+  {() => {
+    const [value, setValue] = useState('')
+    return (
+      <React.Fragment>
+        <MoneyInput
+          placeholder="Введите сумму"
+          clear={true}
+          onClear={() => {
+            setValue('')
+          }}
+          value={value}
+          onChange={e => {
+            setValue(e.currentTarget.value)
+          }}
+        />
+        <Text>Input value: {value}</Text>
+      </React.Fragment>
+    )
+  }}
+</Playground>
+
+## Disabled
+
+<Playground>
+  <MoneyInput disabled value={'10000'} />
+</Playground>
+
+## Props
+
+<Props of={MoneyInput} />
+
+### + Props of Input
+
+<Props of={Input} />

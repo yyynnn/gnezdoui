@@ -1,0 +1,23 @@
+---
+name: Hider
+menu: Компоненты
+route: /Hider
+---
+
+import { useState } from 'react'
+import { Playground, Props } from 'docz'
+import { Hider, Spacer, Text, Heading, Col, Container, Row, theme } from 'lib'
+
+# Hider
+
+Hides element via CSS at 1023px and down, shows at 1024px ad up by default. Breakpoint can be changed via "at" prop
+
+<Playground>
+  <Hider at={theme.breakpoints.mob}>
+    <Text>I'm hidden at mobile, but visible on desktop</Text>
+  </Hider>
+</Playground>
+
+## Props
+
+<Props of={Hider} />

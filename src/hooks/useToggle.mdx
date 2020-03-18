@@ -1,0 +1,36 @@
+---
+name: useToggle
+menu: Custom React Hooks
+route: /useToggle
+---
+
+import { useRef } from 'react'
+import { useToggle } from 'hooks'
+import { Playground, Props } from 'docz'
+import { Button } from 'lib'
+
+# useToggle
+
+<Playground>
+  {
+    () => {
+      const [on, toggle] = useToggle(false)
+      const Component = () => {
+
+        const handler = () => {
+          toggle(!on)
+        }
+
+        return (
+            <Button onClick={handler}>
+              {on ? 'ON' : 'OFF'}
+            </Button>
+
+        )
+      }
+      return <Component />
+    }
+
+}
+
+</Playground>

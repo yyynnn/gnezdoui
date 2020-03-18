@@ -1,0 +1,19 @@
+---
+name: Icon
+menu: Компоненты
+route: /Icon
+---
+
+import { Playground, Props } from 'docz'
+
+import { Spacer, Text, Heading, Col, Container, Row, Money, List, ListItem, theme } from 'lib'
+import { Icon } from './Icon'
+
+# Icon
+
+<Playground>
+  <Icon type="check" fill={theme.colors.black} />
+  <Icon type="question" fill={theme.colors.black} stroke={theme.colors.white} />
+</Playground>
+
+<Props of={Icon} />
