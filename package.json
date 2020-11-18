@@ -226,7 +226,7 @@
     "reselect": "^4.0.0",
     "resize-observer-polyfill": "^1.5.0",
     "rooks": "^1.2.2",
-    "semantic-release": "^15.13.20",
+    "semantic-release": "^17.2.3",
     "style-loader": "^0.23.1",
     "styled-components": "^4.2.0",
     "styled-icons": "^7.9.0",
